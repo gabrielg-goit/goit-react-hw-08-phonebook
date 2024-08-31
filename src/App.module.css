@@ -1,0 +1,24 @@
+.app {
+  font-family: 'Arial', sans-serif;
+  background-color: #c4f2ed;
+  color: #070707;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #4a90e2;
+  margin-bottom: 10px;
+  text-align: center;
+}

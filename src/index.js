@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { StrictMode, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from 'components/App';
+import { Provider, useDispatch } from 'react-redux';
+import { store } from './store/store';
+import App from './App';
+import { refreshUser } from './redux/operations';
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const Root = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return <App />;
+};
+
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <Provider store={store}>
+      <Root />
+    </Provider>
+  </StrictMode>
 );
